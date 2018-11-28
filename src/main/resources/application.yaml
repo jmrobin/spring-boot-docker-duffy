@@ -1,0 +1,38 @@
+name: develop-YAML
+
+server:
+  port: 8182
+
+spring:
+  profiles: develop
+  jpa:
+    hibernate:
+      ddl-auto: update
+      
+  datasource:
+    url: jdbc:mysql://localhost:3306/fleetman
+    username: root
+    password: root
+    
+HomeController:
+  message: "develop"
+  
+---
+name: docker-YAML
+
+server:
+  port: 8183
+
+spring:
+  profiles: docker
+  jpa:
+    hibernate:
+      ddl-auto: update
+      
+  datasource:
+    url: jdbc:mysql://disney:3306/duffy
+    username: root
+    password: password
+    
+HomeController:
+  message: "docker"
